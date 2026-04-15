@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curcuvita | Jalea de Cúrcuma</title>
+  <meta name="description" content="Curcuvita, jalea de cúrcuma con una propuesta natural, innovadora y deliciosa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff9f2;
+      --bg-soft: #fff1d7;
+      --surface: rgba(255,255,255,0.82);
+      --surface-strong: rgba(255,255,255,0.92);
+      --primary: #d98800;
+      --primary-dark: #7a4300;
+      --secondary: #6f8c2b;
+      --accent: #f3b408;
+      --text: #2e2417;
+      --muted: #6c6052;
+      --white: #ffffff;
+      --border: rgba(122,67,0,0.10);
+      --shadow: 0 18px 50px rgba(94, 57, 4, 0.10);
+      --shadow-soft: 0 10px 30px rgba(94, 57, 4, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1200px;
+
+      --img-hero-main: url('image copy 2.png');
+      --img-hero-side-1: url('image.png');
+      --img-hero-side-2: url('image copy 3.png');
+      --img-quienes-somos: url('Screenshot 2026-04-14 224115.png');
+      --img-redes: url('image copy 4.png');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(243,180,8,0.18), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(111,140,43,0.14), transparent 24%),
+        linear-gradient(180deg, #fffdf8 0%, #fff8ea 42%, #fff3de 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 42px;
+      font-size: 1rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(217,136,0,0.10);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .tag::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 249, 242, 0.76);
+      border-bottom: 1px solid rgba(122,67,0,0.08);
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--primary-dark);
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.7);
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--primary-dark);
+      border-radius: 999px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text);
+      transition: 0.25s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(217,136,0,0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.84);
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero {
+      min-height: calc(100vh - 82px);
+      display: flex;
+      align-items: center;
+      padding: 74px 0 46px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.93;
+      letter-spacing: -0.06em;
+      margin-bottom: 22px;
+      color: var(--primary-dark);
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 640px;
+      font-size: 1.03rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      animation: floatUp 5s ease-in-out infinite;
+    }
+
+    .stat-card:nth-child(2) { animation-delay: 0.4s; }
+    .stat-card:nth-child(3) { animation-delay: 0.8s; }
+
+    .stat-card strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .stat-card span {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1fr 0.74fr;
+      gap: 18px;
+    }
+
+    .glass-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255,255,255,0.84));
+      border: 1px solid rgba(255,255,255,0.55);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-visual {
+      min-height: 620px;
+      display: flex;
+      align-items: end;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.12)),
+        var(--img-hero-main) center/cover no-repeat;
+      animation: zoomPulse 10s ease-in-out infinite;
+    }
+
+    .main-visual .overlay-box {
+      width: 100%;
+      background: rgba(255,250,242,0.80);
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 24px;
+      padding: 20px;
+      backdrop-filter: blur(14px);
+    }
+
+    .overlay-box h3 {
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .overlay-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .side-visuals {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .side-card {
+      min-height: 300px;
+      padding: 18px;
+      display: flex;
+      align-items: end;
+      background-size: cover;
+      background-position: center;
+      animation: floatUp 6s ease-in-out infinite;
+    }
+
+    .side-card:first-child {
+      background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.12)),
+        var(--img-hero-side-1);
+    }
+
+    .side-card:last-child {
+      background-image:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.12)),
+        var(--img-hero-side-2);
+      animation-delay: 0.6s;
+    }
+
+    .side-card .mini-overlay {
+      background: rgba(255,250,242,0.84);
+      border-radius: 20px;
+      padding: 16px;
+      width: 100%;
+      backdrop-filter: blur(14px);
+    }
+
+    .side-card h4 {
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .side-card p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .floating-badge {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow-soft);
+      font-weight: 700;
+      color: var(--primary-dark);
+      animation: floatUp 5s ease-in-out infinite;
+    }
+
+    .badge-1 { top: 24px; left: -10px; }
+    .badge-2 { right: -6px; bottom: 26px; animation-delay: 0.8s; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card,
+    .mini-card,
+    .social-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .card,
+    .mini-card {
+      padding: 30px;
+    }
+
+    .card h3,
+    .mini-card h4 {
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+    }
+
+    .mini-card h4 {
+      font-size: 1.18rem;
+    }
+
+    .card p,
+    .mini-card p {
+      color: var(--muted);
+    }
+
+    .image-highlight {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .image-panel {
+      min-height: 460px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.12)),
+        var(--img-quienes-somos) center/cover no-repeat;
+    }
+
+    .content-panel {
+      display: grid;
+      gap: 18px;
+    }
+
+    .testimonial::before {
+      content: '★ ★ ★ ★ ★';
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      font-size: 0.94rem;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 18px;
+      color: var(--primary-dark);
+    }
+
+    .recipe-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .recipe-card::after {
+      content: '';
+      position: absolute;
+      inset: auto -20px -30px auto;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(243,180,8,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .recipe-card ul {
+      padding-left: 18px;
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .recipe-card li + li {
+      margin-top: 8px;
+    }
+
+    .recipes-shell {
+      position: relative;
+      border-radius: 36px;
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.54), rgba(255,255,255,0.76));
+      border: 1px solid rgba(122,67,0,0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .recipes-shell::before,
+    .recipes-shell::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(243,180,8,0.10), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .recipes-shell::before {
+      top: -120px;
+      left: -80px;
+    }
+
+    .recipes-shell::after {
+      right: -90px;
+      bottom: -160px;
+    }
+
+    .recipes-toolbar,
+    .recipes-track,
+    .recipes-dots {
+      position: relative;
+      z-index: 1;
+    }
+
+    .recipes-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .recipes-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .recipes-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(217,136,0,0.10);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .recipes-pill span {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white);
+      font-size: 0.82rem;
+    }
+
+    .recipes-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .recipes-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .recipes-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.92);
+      color: var(--primary-dark);
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .recipes-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 34px rgba(94, 57, 4, 0.12);
+      background: #fff;
+    }
+
+    .recipes-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(320px, 38%);
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 6px 2px 16px;
+      cursor: grab;
+    }
+
+    .recipes-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .recipes-track.dragging {
+      cursor: grabbing;
+      scroll-behavior: auto;
+    }
+
+    .recipe-slide {
+      scroll-snap-align: start;
+      min-height: 100%;
+      position: relative;
+      padding: 28px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,248,238,0.94));
+      border: 1px solid rgba(122,67,0,0.10);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      transform: translateY(0);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .recipe-slide:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(217,136,0,0.18);
+    }
+
+    .recipe-slide::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(243,180,8,0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    .recipe-slide::after {
+      content: "";
+      position: absolute;
+      left: -40px;
+      bottom: -70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(111,140,43,0.10), transparent 70%);
+      pointer-events: none;
+    }
+
+    .recipe-header,
+    .recipe-body,
+    .recipe-footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .recipe-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .recipe-number {
+      display: inline-grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 16px 28px rgba(217,136,0,0.20);
+    }
+
+    .recipe-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(111,140,43,0.12);
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .recipe-title {
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      line-height: 1.15;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .recipe-summary {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .recipe-body {
+      display: grid;
+      gap: 18px;
+    }
+
+    .recipe-panel {
+      background: rgba(255,255,255,0.64);
+      border: 1px solid rgba(122,67,0,0.08);
+      border-radius: 22px;
+      padding: 18px 18px 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .recipe-panel h4 {
+      color: var(--primary-dark);
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .recipe-panel ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--text);
+      padding: 0;
+      margin: 0;
+    }
+
+    .recipe-panel li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .recipe-panel li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .recipe-panel p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    .recipe-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .recipe-chip-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .recipe-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(217,136,0,0.08);
+      color: var(--primary-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .recipes-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .recipes-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(122,67,0,0.20);
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, width 0.25s ease;
+    }
+
+    .recipes-dot.active {
+      width: 34px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scale(1.02);
+    }
+
+    .social-wrapper {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .social-left {
+      padding: 34px;
+    }
+
+    .social-left p {
+      color: var(--muted);
+      margin-bottom: 24px;
+      max-width: 620px;
+    }
+
+    .social-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.84);
+      box-shadow: var(--shadow-soft);
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(243,180,8,0.08), rgba(111,140,43,0.06));
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217,136,0,0.24);
+      box-shadow: 0 20px 40px rgba(94, 57, 4, 0.12);
+    }
+
+    .social-link:hover::before {
+      opacity: 1;
+    }
+
+    .social-brand,
+    .social-action {
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(217,136,0,0.14), rgba(243,180,8,0.20));
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .social-brand h4 {
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
+
+    .social-brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .social-action {
+      color: var(--primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .social-visual {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.10)),
+        var(--img-redes) center/cover no-repeat;
+    }
+
+    .social-visual .visual-overlay {
+      position: absolute;
+      inset: auto 22px 22px 22px;
+      background: rgba(255,249,242,0.84);
+      border: 1px solid rgba(255,255,255,0.52);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+    }
+
+    .social-visual h3 {
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+    }
+
+    .social-visual p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 0 42px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes zoomPulse {
+      0%, 100% { background-size: cover; }
+      50% { background-size: 108%; }
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .image-highlight,
+      .social-wrapper,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: auto;
+        grid-template-columns: 1fr;
+      }
+
+      .side-visuals {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .main-visual {
+        min-height: 520px;
+      }
+
+      .social-visual {
+        min-height: 420px;
+      }
+
+      .recipes-track {
+        grid-auto-columns: minmax(320px, 62%);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 4%;
+        right: 4%;
+        background: rgba(255,250,242,0.97);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 0.3s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        padding: 12px 10px;
+        border-radius: 14px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(217,136,0,0.08);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 11vw, 4.2rem);
+      }
+
+      .hero-stats,
+      .side-visuals {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .recipes-shell {
+        padding: 20px;
+      }
+
+      .recipes-track {
+        grid-auto-columns: 86%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(94%, var(--max));
+      }
+
+      .navbar {
+        min-height: 76px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .card,
+      .mini-card,
+      .social-left,
+      .recipe-slide {
+        padding: 22px;
+      }
+
+      .main-visual,
+      .image-panel,
+      .social-visual,
+      .side-card {
+        min-height: 300px;
+      }
+
+      .floating-badge {
+        position: static;
+        margin-bottom: 12px;
+        display: inline-flex;
+      }
+
+      .hero-visual {
+        gap: 14px;
+      }
+
+      .social-link {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .social-action {
+        white-space: normal;
+      }
+
+      .recipes-toolbar {
+        align-items: stretch;
+      }
+
+      .recipes-nav {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      .recipes-track {
+        grid-auto-columns: 100%;
+      }
+
+      .recipe-header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#inicio" class="logo">Curcu<span>vita</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#mision">Misión</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#vision">Visión</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#recetario">Recetario</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="fade-in">
+          <div class="tag">Jalea de cúrcuma con identidad premium</div>
+          <h1>Curcuvita,<br><span>sabor con esencia natural</span></h1>
+          <p>
+            Una propuesta moderna, visualmente atractiva y con una personalidad única. Curcuvita proyecta una imagen cálida, innovadora y profesional, ideal para conectar con personas que valoran el sabor, el bienestar y la autenticidad.
+          </p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Ver redes sociales</a>
+            <a href="#recetario" class="btn btn-secondary">Explorar recetario</a>
+          </div>
+          <div class="hero-stats">
+            <article class="stat-card">
+              <strong>Beneficios</strong>
+              <span>Una propuesta natural que combina ingredientes cuidadosamente seleccionados para ofrecer un sabor único, con propiedades que aportan bienestar y equilibrio en cada cucharada.</span>
+            </article>
+            <article class="stat-card">
+              <strong>El corazón de Curcuvita</strong>
+              <span>La cúrcuma es un ingrediente natural reconocido por sus poderosas propiedades antioxidantes y antiinflamatorias, utilizada desde hace siglos por sus beneficios para la salud y el bienestar.</span>
+            </article>
+            <article class="stat-card">
+              <strong>Sobre Curcuvita</strong>
+              <span>Curcuvita es una exquisita jalea artesanal elaborada a base de cúrcuma, un ingrediente natural reconocido por sus propiedades antioxidantes y antiinflamatorias, cuidadosamente seleccionada para garantizar la más alta calidad.</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in">
+          <div class="floating-badge badge-1">Natural • Creativa • Profesional</div>
+          <article class="glass-card main-visual">
+            <div class="overlay-box">
+              <h3>Curcuvita</h3>
+              <p>Una identidad visual construida para destacar con estilo, confianza y un concepto memorable.</p>
+            </div>
+          </article>
+
+          <div class="side-visuals">
+            <article class="glass-card side-card">
+              <div class="mini-overlay">
+                <h4>Inspiración natural</h4>
+                <p>Colores cálidos y una estética orgánica que transmite cercanía.</p>
+              </div>
+            </article>
+            <article class="glass-card side-card">
+              <div class="mini-overlay">
+                <h4>Presencia elegante</h4>
+                <p>Una propuesta visual pensada para verse moderna y profesional.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mision">
+      <div class="container">
+        <div class="tag fade-in">Nuestra esencia</div>
+        <h2 class="section-title fade-in">Misión</h2>
+        <p class="section-subtitle fade-in">
+          Llevar al público una jalea de cúrcuma con una propuesta innovadora, profesional y atractiva, que combine identidad visual, autenticidad y una experiencia memorable alrededor de la marca Curcuvita.
+        </p>
+
+        <div class="grid-2">
+          <article class="card fade-in">
+            <h3>Calidad en cada detalle</h3>
+            <p>
+              Curcuvita busca transmitir excelencia desde su imagen hasta su comunicación, proyectando una marca confiable, bien construida y con alto valor visual.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <h3>Conexión con el consumidor</h3>
+            <p>
+              Nuestra misión es crear una propuesta que conecte de forma cercana con las personas, destacando por su estilo, concepto y personalidad auténtica.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quienes-somos">
+      <div class="container">
+        <div class="image-highlight">
+          <div class="image-panel fade-in"></div>
+          <div class="content-panel">
+            <div>
+              <div class="tag fade-in">Identidad de marca</div>
+              <h2 class="section-title fade-in">Quiénes somos</h2>
+              <p class="section-subtitle fade-in" style="margin-bottom: 24px;">
+                Curcuvita es una marca que nace con la idea de presentar una jalea de cúrcuma con una imagen moderna, cálida y memorable, pensada para destacar por su originalidad y su propuesta visual.
+              </p>
+            </div>
+            <div class="grid-3">
+              <article class="mini-card fade-in">
+                <h4>Idea con propósito</h4>
+                <p>Más que un producto, Curcuvita busca convertirse en una experiencia de marca clara, atractiva y profesional.</p>
+              </article>
+              <article class="mini-card fade-in">
+                <h4>Concepto diferenciador</h4>
+                <p>Se construye sobre una estética innovadora que resalta la esencia natural de la cúrcuma con elegancia.</p>
+              </article>
+              <article class="mini-card fade-in">
+                <h4>Presencia memorable</h4>
+                <p>Su identidad visual está pensada para captar atención y generar conexión desde el primer vistazo.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vision">
+      <div class="container">
+        <div class="tag fade-in">Proyección</div>
+        <h2 class="section-title fade-in">Visión</h2>
+        <p class="section-subtitle fade-in">
+          Ser una marca reconocida por su innovación, su imagen profesional y su capacidad para posicionar una jalea de cúrcuma como una propuesta distintiva, moderna y visualmente poderosa.
+        </p>
+        <div class="grid-2">
+          <article class="card fade-in">
+            <h3>Reconocimiento</h3>
+            <p>
+              Queremos que Curcuvita sea identificada por su estilo, su autenticidad y la coherencia de su imagen en todos los espacios donde se presente.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <h3>Crecimiento con identidad</h3>
+            <p>
+              Buscamos crecer sin perder nuestra esencia, manteniendo una comunicación cuidada, cálida y alineada con el valor de la marca.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonios">
+      <div class="container">
+        <div class="tag fade-in">Experiencias</div>
+        <h2 class="section-title fade-in">Testimonios</h2>
+        <p class="section-subtitle fade-in">
+          Puedes cambiar estos textos por testimonios reales cuando los tengas, pero la sección ya queda con una presentación elegante y lista para usar.
+        </p>
+        <div class="grid-3">
+          <article class="mini-card testimonial fade-in">
+            <p>“Curcuvita proyecta una imagen moderna y muy cuidada. Se siente como una marca con personalidad y mucho potencial.”</p>
+            <strong>María G.</strong>
+          </article>
+          <article class="mini-card testimonial fade-in">
+            <p>“Lo que más me llamó la atención fue su propuesta visual. Tiene una identidad cálida, natural y bastante profesional.”</p>
+            <strong>Andrés R.</strong>
+          </article>
+          <article class="mini-card testimonial fade-in">
+            <p>“Es una marca que transmite autenticidad. El concepto se ve innovador, atractivo y muy bien construido.”</p>
+            <strong>Valeria M.</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recetario">
+      <div class="container">
+        <div class="tag fade-in">Ideas para disfrutarla</div>
+        <h2 class="section-title fade-in">Recetario interactivo</h2>
+        <p class="section-subtitle fade-in">
+          Descubre las 8 recetas de Curcuvita en un carrusel premium, animado y fácil de usar. Puedes deslizar con el dedo, arrastrar con el mouse o usar las flechas para recorrer cada preparación.
+        </p>
+
+        <div class="recipes-shell fade-in">
+          <div class="recipes-toolbar">
+            <div class="recipes-toolbar-left">
+              <div class="recipes-pill"><span>8</span> recetas funcionales</div>
+              <div class="recipes-note">Desliza lateralmente para explorar todo el recetario.</div>
+            </div>
+            <div class="recipes-nav">
+              <button class="recipes-btn" id="recipesPrev" aria-label="Receta anterior">&#8592;</button>
+              <button class="recipes-btn" id="recipesNext" aria-label="Siguiente receta">&#8594;</button>
+            </div>
+          </div>
+
+          <div class="recipes-track" id="recipesTrack">
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Toque picante y cítrico</div>
+                  <h3 class="recipe-title">Estilo Chamoy</h3>
+                  <p class="recipe-summary">Una preparación intensa, sabrosa y versátil, ideal para quienes buscan un contraste entre dulce, ácido y picante.</p>
+                </div>
+                <div class="recipe-number">01</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>½ taza de jalea base Curcuvita</li>
+                    <li>½ cucharadita de chile en polvo, al gusto</li>
+                    <li>Jugo de ½ limón</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>Coloca la jalea base Curcuvita en una olla pequeña o sartén antiadherente. Caliéntala a fuego bajo, moviendo constantemente, hasta que se suavice y sea fácil de manejar. Es importante no dejarla hervir.
+
+Agrega el chile en polvo y el jugo de limón, y mezcla bien hasta integrar todos los ingredientes. Prueba la preparación y ajusta el sabor según prefieras: más chile para un toque picante o más limón para mayor acidez.
+
+Finalmente, deja reposar de 5 a 10 minutos y permite que enfríe para que tome una mejor textura.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Dulce</span>
+                  <span class="recipe-chip">Ácido</span>
+                  <span class="recipe-chip">Picante</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Ligero y balanceado</div>
+                  <h3 class="recipe-title">Aderezo para ensaladas</h3>
+                  <p class="recipe-summary">Un aderezo suave y brillante que combina muy bien con ensaladas frescas, bowls y vegetales.</p>
+                </div>
+                <div class="recipe-number">02</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>¼ taza de jalea base Curcuvita</li>
+                    <li>2 cucharadas de aceite de oliva</li>
+                    <li>1 cucharada de vinagre o jugo de limón</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>Coloca la jalea base Curcuvita en un recipiente pequeño o sartén y caliéntala a fuego bajo hasta que esté más suave. No debe hervir.
+
+Una vez esté ligeramente líquida, retírala del fuego. Agrega el aceite de oliva en forma de hilo, poco a poco, mientras mezclas constantemente para lograr una textura homogénea.
+
+Incorpora el vinagre o el jugo de limón para aportar acidez. Prueba la preparación y ajusta el sabor según tu preferencia, ya sea más acidez, sal o intensidad.
+
+Finalmente, deja reposar de 5 a 10 minutos para que los sabores se integren bien.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Ensaladas</span>
+                  <span class="recipe-chip">Fresco</span>
+                  <span class="recipe-chip">Suave</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Textura firme y funcional</div>
+                  <h3 class="recipe-title">Gelatina funcional</h3>
+                  <p class="recipe-summary">Una opción creativa y saludable con una base ligera y una textura fresca para servir fría.</p>
+                </div>
+                <div class="recipe-number">03</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>1 taza de jalea CurcuVita</li>
+                    <li>½ taza de agua caliente</li>
+                    <li>½ cucharadita adicional de gelatina sin sabor</li>
+                    <li>½ sobre de gelatina de sabor, opcional</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>En un recipiente pequeño se colocará la gelatina sin sabor con 2 cucharadas de agua fría y dejarla reposar 5 minutos. Luego añadir un chorrito de agua caliente y mezclar hasta que se disuelva completamente. Si vas a usar gelatina de sabor, este es el momento de agregarla.
+
+En una olla coloca la jalea CurcuVita y la ½ taza de agua caliente a fuego bajo, moviéndolo sin hervir. Después incorpora la gelatina sin sabor ya disuelta y mezcla bien por 2 minutos.
+
+Luego coloca la preparación en recipientes y deja enfriar a temperatura ambiente. Finalmente, refrigera durante 2 a 4 horas hasta que se solidifique.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Refrigerada</span>
+                  <span class="recipe-chip">Funcional</span>
+                  <span class="recipe-chip">Ligera</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Cremoso y versátil</div>
+                  <h3 class="recipe-title">Dip</h3>
+                  <p class="recipe-summary">Ideal para untar, acompañar snacks o servir como una opción diferente en tablas y entradas.</p>
+                </div>
+                <div class="recipe-number">04</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>1 taza de jalea base</li>
+                    <li>½ taza de yogurt o queso crema</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>En una olla pequeña calienta la jalea CurcuVita ligeramente sin que hierva. Esto hará que sea más líquida y más fácil de incorporar.
+
+Luego en un tazón pasa la jalea y agrega el yogurt o el queso crema. Mezcla bien, ya sea con cuchara o con batidor, hasta obtener una textura homogénea y cremosa.</p>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Variaciones</h4>
+                  <ul>
+                    <li>Picante: ½ cucharadita de chile en polvo y ¼ de paprika</li>
+                    <li>Herbal: 1 cucharada de culantro, perejil o cebollino finamente picado y ½ cucharadita de ajo en polvo</li>
+                    <li>Dulce: 1-2 cucharadas de miel y ¼ de vainilla</li>
+                    <li>Tipo queso: 2 cucharadas de queso finamente rallado, sal y pimienta al gusto</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Cremoso</span>
+                  <span class="recipe-chip">Snacks</span>
+                  <span class="recipe-chip">Versátil</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Perfecto para cocinar</div>
+                  <h3 class="recipe-title">Adobo para carnes y vegetales</h3>
+                  <p class="recipe-summary">Una mezcla aromática y sabrosa que se carameliza ligeramente y aporta muchísimo carácter.</p>
+                </div>
+                <div class="recipe-number">05</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>¼ taza de jalea base Curcuvita</li>
+                    <li>1 cucharada de salsa de soya o tamari</li>
+                    <li>1 cucharada de miel o maple</li>
+                    <li>1 cucharadita de aceite de oliva</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>En un recipiente calienta ligeramente la jalea Curcuvita a fuego bajo para que se suavice, sin hervir. Luego agrega la salsa de soya o tamari, la miel o el maple y el aceite de oliva. Mezcla todo bien hasta obtener un adobo homogéneo.
+
+Luego cubre la carne con el adobo por 30 minutos a 2 horas. En vegetales puedes dejarlo reposar de 15 a 30 minutos.
+
+Este adobo se puede utilizar para cocinar en horno, plancha o sartén. Ten en cuenta que se carameliza ligeramente.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Carnes</span>
+                  <span class="recipe-chip">Vegetales</span>
+                  <span class="recipe-chip">Carameliza</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Dulce para untar o rellenar</div>
+                  <h3 class="recipe-title">Jalea dulce</h3>
+                  <p class="recipe-summary">Una versión más frutal y dulce, ideal para acompañar panes, postres o preparaciones especiales.</p>
+                </div>
+                <div class="recipe-number">06</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>1 taza de jalea base</li>
+                    <li>1 taza de fruta de su preferencia en cubos o puré</li>
+                    <li>½ taza de agua o jugo natural</li>
+                    <li>2-4 cucharadas de azúcar o miel, al gusto</li>
+                    <li>Opcional: pizca de vainilla o canela</li>
+                    <li>¼ cucharadita de gelatina sin sabor, solo si se quiere más firmeza</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>En una olla pequeña coloca la fruta elegida y el agua o jugo. Cocina a fuego medio durante 5 a 7 minutos hasta que la fruta esté suave. Luego licúa o machaca lo que quedó en un puré fino y devuelve ese puré a la olla.
+
+Agrega la jalea Curcuvita y mezcla bien a fuego bajo. Después endulza esa jalea ya sea con miel o azúcar, según el gusto. Puedes agregar vainilla o canela y cocinar de 3 a 5 minutos sin hervir fuerte.
+
+Si deseas más firmeza, agrega ¼ cucharadita de gelatina sin sabor hidratada en agua fría. Al final apaga el fuego, deja enfriar y refrigera para obtener mejor textura untable.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Frutal</span>
+                  <span class="recipe-chip">Untable</span>
+                  <span class="recipe-chip">Postres</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Congelado refrescante</div>
+                  <h3 class="recipe-title">Paletas funcionales</h3>
+                  <p class="recipe-summary">Una alternativa fresca y práctica para disfrutar Curcuvita en una presentación ligera y muy agradable.</p>
+                </div>
+                <div class="recipe-number">07</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>1 taza de jalea base</li>
+                    <li>½ taza de jugo natural de naranja o piña</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>Coloca la jalea de CurcuVita en un recipiente para suavizarla, ya sea en baño maría o en microondas durante 10 segundos, sin dejar hervir. Cuando esté suave agrega el jugo y mezcla hasta obtener una preparación homogénea.
+
+Si se quiere agregar más dulzor, se puede incorporar 2 cucharadas de miel o azúcar. Cuando la mezcla esté a temperatura ambiente, viértela en moldes y congela por 4 a 6 horas.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Frío</span>
+                  <span class="recipe-chip">Natural</span>
+                  <span class="recipe-chip">Refrescante</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="recipe-slide">
+              <div class="recipe-header">
+                <div>
+                  <div class="recipe-kicker">Textura suave y cremosa</div>
+                  <h3 class="recipe-title">Mantequilla dorada</h3>
+                  <p class="recipe-summary">Una mezcla simple pero muy elegante para untar y dar un acabado distinto a panes, tostadas o galletas.</p>
+                </div>
+                <div class="recipe-number">08</div>
+              </div>
+
+              <div class="recipe-body">
+                <div class="recipe-panel">
+                  <h4>Ingredientes</h4>
+                  <ul>
+                    <li>2 cucharadas de jalea base</li>
+                    <li>2 cucharadas de mantequilla suave</li>
+                  </ul>
+                </div>
+                <div class="recipe-panel">
+                  <h4>Modo de preparación</h4>
+                  <p>En un tazón coloca la mantequilla suave y la jalea CurcuVita. Mezcla con una espátula hasta obtener una crema uniforme.
+
+Después refrigera de 10 a 15 minutos para que tome cuerpo y tenga una textura más firme y agradable.</p>
+                </div>
+              </div>
+
+              <div class="recipe-footer">
+                <div class="recipe-chip-group">
+                  <span class="recipe-chip">Untable</span>
+                  <span class="recipe-chip">Cremosa</span>
+                  <span class="recipe-chip">Rápida</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="recipes-dots" id="recipesDots" aria-label="Indicadores del carrusel"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="tag fade-in">Conecta con Curcuvita</div>
+        <h2 class="section-title fade-in">Redes sociales</h2>
+        <p class="section-subtitle fade-in"></p>
+
+        <div class="social-wrapper">
+          <article class="social-card social-left fade-in">
+            <h3 style="font-size: 1.6rem; color: var(--primary-dark); margin-bottom: 12px;">Síguenos y descubre más</h3>
+            <p>
+              Curcuvita también vive en redes. Aquí puedes conocer más sobre la marca, su estilo, su comunidad y el contenido visual que la representa.
+            </p>
+            <div class="social-list">
+              <a class="social-link" href="https://www.tiktok.com/@curcuvitaoficial?_r=1&_t=ZS-95Y5VEXDtw5" target="_blank" rel="noopener noreferrer">
+                <div class="social-brand">
+                  <div class="social-icon">TT</div>
+                  <div>
+                    <h4>TikTok</h4>
+                    <p>@curcuvitaoficial</p>
+                  </div>
+                </div>
+                <div class="social-action">Abrir perfil</div>
+              </a>
+
+              <a class="social-link" href="mailto:curcuvitaoficial@outlook.com">
+                <div class="social-brand">
+                  <div class="social-icon">@</div>
+                  <div>
+                    <h4>Correo</h4>
+                    <p>curcuvitaoficial@outlook.com</p>
+                  </div>
+                </div>
+                <div class="social-action">Enviar correo</div>
+              </a>
+
+              <a class="social-link" href="https://www.instagram.com/curcuvitaoficial?igsh=aTUwYXExOTg5MGFy" target="_blank" rel="noopener noreferrer">
+                <div class="social-brand">
+                  <div class="social-icon">IG</div>
+                  <div>
+                    <h4>Instagram</h4>
+                    <p>@curcuvitaoficial</p>
+                  </div>
+                </div>
+                <div class="social-action">Ver cuenta</div>
+              </a>
+            </div>
+          </article>
+
+          <article class="social-card social-visual fade-in">
+            <div class="visual-overlay">
+              <h3>Una marca hecha para destacar</h3>
+              <p></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Curcuvita. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const recipesTrack = document.getElementById('recipesTrack');
+    const recipesPrev = document.getElementById('recipesPrev');
+    const recipesNext = document.getElementById('recipesNext');
+    const recipesDots = document.getElementById('recipesDots');
+    const recipeSlides = [...document.querySelectorAll('.recipe-slide')];
+
+    let currentRecipeIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    recipeSlides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'recipes-dot';
+      dot.setAttribute('aria-label', `Ir a la receta ${index + 1}`);
+      dot.addEventListener('click', () => scrollToRecipe(index));
+      recipesDots.appendChild(dot);
+    });
+
+    const dotButtons = [...recipesDots.querySelectorAll('.recipes-dot')];
+
+    function getRecipeStep() {
+      const slide = recipeSlides[0];
+      const slideStyles = window.getComputedStyle(recipesTrack);
+      const gap = parseFloat(slideStyles.columnGap || slideStyles.gap || 20);
+      return slide.getBoundingClientRect().width + gap;
+    }
+
+    function scrollToRecipe(index) {
+      currentRecipeIndex = Math.max(0, Math.min(index, recipeSlides.length - 1));
+      const target = recipeSlides[currentRecipeIndex];
+      recipesTrack.scrollTo({
+        left: target.offsetLeft - recipesTrack.offsetLeft,
+        behavior: 'smooth'
+      });
+      updateDots();
+    }
+
+    function updateDots() {
+      dotButtons.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentRecipeIndex);
+      });
+    }
+
+    function updateCurrentRecipeByScroll() {
+      const step = getRecipeStep();
+      currentRecipeIndex = Math.round(recipesTrack.scrollLeft / step);
+      currentRecipeIndex = Math.max(0, Math.min(currentRecipeIndex, recipeSlides.length - 1));
+      updateDots();
+    }
+
+    recipesPrev.addEventListener('click', () => {
+      scrollToRecipe(currentRecipeIndex - 1);
+    });
+
+    recipesNext.addEventListener('click', () => {
+      scrollToRecipe(currentRecipeIndex + 1);
+    });
+
+    recipesTrack.addEventListener('scroll', () => {
+      window.requestAnimationFrame(updateCurrentRecipeByScroll);
+    });
+
+    recipesTrack.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      recipesTrack.classList.add('dragging');
+      startX = event.pageX - recipesTrack.offsetLeft;
+      scrollLeft = recipesTrack.scrollLeft;
+    });
+
+    recipesTrack.addEventListener('mouseleave', () => {
+      isDragging = false;
+      recipesTrack.classList.remove('dragging');
+    });
+
+    recipesTrack.addEventListener('mouseup', () => {
+      isDragging = false;
+      recipesTrack.classList.remove('dragging');
+    });
+
+    recipesTrack.addEventListener('mousemove', (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      const x = event.pageX - recipesTrack.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      recipesTrack.scrollLeft = scrollLeft - walk;
+    });
+
+    recipesTrack.addEventListener('touchstart', () => {
+      recipesTrack.classList.add('dragging');
+    }, { passive: true });
+
+    recipesTrack.addEventListener('touchend', () => {
+      recipesTrack.classList.remove('dragging');
+    });
+
+    window.addEventListener('resize', updateCurrentRecipeByScroll);
+    updateDots();
+  </script>
+</body>
+</html>
