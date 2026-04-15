@@ -29,7 +29,7 @@
       --radius-md: 18px;
       --max: 1200px;
 
-      --img-hero-main: url('image copy 2.png');
+      --img-hero-main: url('image copy 4.png');
       --img-hero-side-1: url('image.png');
       --img-hero-side-2: url('image copy 3.png');
       --img-quienes-somos: url('Screenshot 2026-04-14 224115.png');
@@ -131,16 +131,119 @@
       gap: 20px;
     }
 
-    .logo {
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--primary-dark);
-    }
+  .logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  padding: 8px 14px;
+  border-radius: 22px;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.3s ease;
+}
 
-    .logo span {
-      color: var(--secondary);
-    }
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(217,136,0,0.14), rgba(243,180,8,0.10));
+  border: 1px solid rgba(122,67,0,0.10);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(94, 57, 4, 0.08);
+  transition: 0.3s ease;
+  z-index: -2;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 42%;
+  height: 320%;
+  transform: rotate(22deg) translateX(-220%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.75),
+    rgba(255,255,255,0.18),
+    transparent
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.logo img {
+  height: 54px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(122,67,0,0.16));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+}
+
+.logo:hover::before {
+  border-color: rgba(217,136,0,0.22);
+  box-shadow: 0 14px 30px rgba(94, 57, 4, 0.14);
+}
+
+.logo:hover::after {
+  animation: logoShine 0.9s ease forwards;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 10px 18px rgba(217,136,0,0.22));
+}
+
+.logo:active img {
+  transform: scale(0.98);
+}
+
+@keyframes logoShine {
+  0% {
+    transform: rotate(22deg) translateX(-220%);
+  }
+  100% {
+    transform: rotate(22deg) translateX(520%);
+  }
+}
+
+@media (max-width: 860px) {
+  .logo {
+    height: 64px;
+    padding: 6px 12px;
+    border-radius: 18px;
+  }
+
+  .logo img {
+    height: 48px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 560px) {
+  .logo {
+    height: 58px;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+
+  .logo img {
+    height: 42px;
+    max-width: 138px;
+  }
+}
 
     .menu-toggle {
       display: none;
@@ -412,7 +515,7 @@
       animation: floatUp 5s ease-in-out infinite;
     }
 
-    .badge-1 { top: 24px; left: -10px; }
+    .badge-1 { top: 24px; left: 2px; }
     .badge-2 { right: -6px; bottom: 26px; animation-delay: 0.8s; }
 
     .grid-2 {
@@ -420,7 +523,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
-
+ 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1191,8 +1294,9 @@
 <body>
   <header>
     <div class="container navbar">
-      <a href="#inicio" class="logo">Curcu<span>vita</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+<a href="#inicio" class="logo" aria-label="Ir al inicio">
+  <img src="image copy 4.png" alt="Logo de Curcuvita">
+</a>     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
         <span></span>
         <span></span>
         <span></span>
@@ -1374,7 +1478,7 @@
         <div class="tag fade-in">Ideas para disfrutarla</div>
         <h2 class="section-title fade-in">Recetario interactivo</h2>
         <p class="section-subtitle fade-in">
-          Descubre las 8 recetas de Curcuvita premium, fácil de hacer. desliza para recorrer cada preparación.
+          Descubre las 8 recetas de Curcuvita en un carrusel premium, animado y fácil de usar. Puedes deslizar con el dedo, arrastrar con el mouse o usar las flechas para recorrer cada preparación.
         </p>
 
         <div class="recipes-shell fade-in">
@@ -1757,7 +1861,7 @@ Después refrigera de 10 a 15 minutos para que tome cuerpo y tenga una textura m
 
           <article class="social-card social-visual fade-in">
             <div class="visual-overlay">
-              <h3>Una marca hecha para destacar</h3>
+              <h3>El secreto dorado a tu bienestar</h3>
               <p></p>
             </div>
           </article>
